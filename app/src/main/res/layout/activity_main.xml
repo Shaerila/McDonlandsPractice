@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+    <fragment
+        android:id="@+id/nav_host_fragment_activity_main"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toTopOf="@id/nav_view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/mobile_navigation" />
+
+    <ImageView
+        android:id="@+id/mcdonald_logo"
+        android:layout_width="156dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_screenshot_20230904_225711_mcdonalds"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/RandD_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/reward_and_deals_text"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mcdonald_logo"
+        />
+
+    <TextView
+        android:id="@+id/opt_in_textview"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/opt_in_text"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginStart="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RandD_text"
+        />
+
+    <ImageView
+        android:id="@+id/item_image"
+        android:layout_width="406dp"
+        android:layout_height="153dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/ic_screenshot_20230904_222728_mcdonalds1"
+        app:layout_constraintTop_toBottomOf="@id/opt_in_textview"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <Button
+        android:id="@+id/learn_more_button"
+        android:layout_width="155dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
+        android:text="@string/learn_more"
+        app:strokeColor="@color/black"
+        app:strokeWidth="1dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/item_image" />
+
+    <Button
+        android:id="@+id/continue_opt_in"
+        android:layout_width="215dp"
+        android:layout_height="50dp"
+        android:text="@string/continue_to_opt_in"
+        android:textColor="@color/black"
+        android:backgroundTint="#EBA543"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        app:strokeColor="@color/black"
+        app:strokeWidth="1dp"
+        app:layout_constraintTop_toBottomOf="@id/item_image"
+        app:layout_constraintStart_toEndOf="@id/learn_more_button" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
